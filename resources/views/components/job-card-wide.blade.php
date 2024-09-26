@@ -3,11 +3,13 @@
 <x-panel class="flex gap-x-6"> 
                 <!-- A div for each section -->
                 <div>
-                    <x-employer-logo />
+                    <x-employer-logo :employer="$job->employer" />
                 </div>
                 <div class="flex-1 flex flex-col" >
                 <a href="#" class="self-start text-sm text-gray-400">{{ $job->employer->name}}</a>
-                    <h1 class="font-bold text-xl mt-3">{{ $job->title}}</h1>
+                    <h1 class="font-bold text-xl mt-3">
+                        <a href="{{ $job->url}}" target="_blank">{{ $job->title}}</a>
+                    </h1>
                     <p class="text-sm text-gray-400 mt-auto">{{ $job->salary}}</p>
                 </div>
 
