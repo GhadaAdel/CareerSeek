@@ -33,10 +33,18 @@
     <a href="#">Companies</a>
 </div>
 
-<div>
-    <a href="#">Post A Job</a>
-</div>
+    @auth
+        <div>
+            <a href="/jobs/create">Post A Job</a>
+        </div>
+    @endauth
 
+    @guest
+        <div class="space-x-5 font-bold">
+            <a href="/regsiter">Sign Up</a>
+            <a href="/login">Log In</a>
+        </div>
+    @endguest
 </nav>
 
 
